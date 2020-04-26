@@ -10,6 +10,7 @@ django = "*"
 python-decouple = "*"
 graphene-django = "*"
 djangorestframework = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.6"
