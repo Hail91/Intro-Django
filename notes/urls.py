@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from graphene_django.views import GraphQLView
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from practice_notes.api import PersonalNoteViewSet
+
+router = routers.DefaultRouter()
+router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('graphql/', GraphQLView.as_view(graphiql=True))
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('api/', include(router.urls)),
 ]

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'practice_notes',
+    'rest_framework',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,4 +124,10 @@ STATIC_URL = '/static/'
 
 GRAPHENE = {
     'SCHEMA': 'practice_notes.schema.schema'
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
